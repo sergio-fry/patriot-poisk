@@ -4,6 +4,7 @@ PatriotPoisk::Application.routes.draw do
 
   get "stats" => "pages#stats"
   get "sites" => "pages#sites"
+  get "about" => "pages#about"
   get "sites/add" => "pages#add_site", :as => :add_site
 
   # The priority is based upon order of creation: first created -> highest priority.
