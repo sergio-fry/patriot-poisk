@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+body,html,.container { height: 100% }
+
+.footer a { color: #888; }
+.footer { color: #888; }
+.footer a.padding { padding-left: 30px; }
