@@ -2,6 +2,13 @@
 <p>В поиске участвуют только отобранные сайты. Полный список:</p>
 
 <pre>
+<% if @new_sites.present? %>
+Новые сайты:
+  <% @new_sites.order(:address).each do |site| %>
+<%= site.address %>
+  <% end %>
+<% end %>
+
   <% @sites.order(:address).each do |site| %>
 <%= site.address %>
   <% end %>

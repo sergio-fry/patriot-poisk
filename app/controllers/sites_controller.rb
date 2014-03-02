@@ -6,7 +6,10 @@ class SitesController < ApplicationController
   # GET /sites.json
   def index
     expires_in 1.hour, :public => true
-    @sites = Site.all
+
+    date = 2.days.ago
+    @new_sites = Site.where("created_at >= ?", date)
+    @sites = Site.where("created_at < ?", date)
   end
 
   # GET /sites/1
