@@ -1,11 +1,12 @@
 PatriotPoisk::Application.routes.draw do
+  get "sites/add" => "pages#add_site", :as => :add_site
+  resources :sites
+
   root "search#index"
   get "results" => "search#results"
 
   get "stats" => "pages#stats"
-  get "sites" => "pages#sites"
   get "about" => "pages#about"
-  get "sites/add" => "pages#add_site", :as => :add_site
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

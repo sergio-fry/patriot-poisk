@@ -1,0 +1,10 @@
+<h1>Сайты</h1>
+<p>В поиске участвуют только отобранные сайты. Полный список:</p>
+
+<pre>
+  <% @sites.order(:address).each do |site| %>
+<%= site.address %>
+  <% end %>
+</pre>
+
+<p><%= link_to "Предложить сайт", add_site_path, :class => "btn btn-primary" %></p>
