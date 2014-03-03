@@ -51,4 +51,10 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'rack-cache'
+
+group :production do
+  gem 'rack-cache'
+  gem 'dalli'
+  gem 'kgio'
+  gem "memcachier"
+end
