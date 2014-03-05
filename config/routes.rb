@@ -4,6 +4,7 @@ PatriotPoisk::Application.routes.draw do
 
   root "search#index"
   get "results" => "search#results"
+  get "opensearch.xml" => "search#open_search"
 
   get "stats" => "pages#stats"
   get "about" => "pages#about"

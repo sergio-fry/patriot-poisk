@@ -5,4 +5,9 @@ class SearchController < ApplicationController
 
   def results
   end
+
+  def open_search
+    response.headers["Content-Type"] = 'application/opensearchdescription+xml'
+    render :layout => false
+  end
 end
