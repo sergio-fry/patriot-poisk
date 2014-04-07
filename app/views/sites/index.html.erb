@@ -1,16 +1,19 @@
 <h1>Сайты</h1>
+
+<% if @new_sites.present? %>
+Новые сайты:
+<pre>
+  <% @new_sites.order(:address).each do |site| %>
+<%= site.domain_without_www %> - добавлен <%= site.created_at.strftime("%Y/%m/%d") %>
+  <% end %>
+</pre>
+<% end %>
+
 <p>В поиске участвуют только отобранные сайты. Полный список:</p>
 
 <pre>
-<% if @new_sites.present? %>
-Новые сайты:
-  <% @new_sites.order(:address).each do |site| %>
-<%= site.address %>
-  <% end %>
-<% end %>
-
-  <% @sites.order(:address).each do |site| %>
-<%= site.address %>
+  <% @sites.sort_by(&:domain_without_www).each do |site| %>
+<%= site.domain_without_www %>
   <% end %>
 </pre>
 

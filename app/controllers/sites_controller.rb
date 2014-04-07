@@ -7,9 +7,9 @@ class SitesController < ApplicationController
   def index
     expires_in 1.hour, :public => true
 
-    date = 2.days.ago
+    date = 7.days.ago
     @new_sites = Site.where("created_at >= ?", date)
-    @sites = Site.where("created_at < ?", date)
+    @sites = Site.all
   end
 
   # GET /sites/1
